@@ -98,6 +98,9 @@ export default class HTML extends PureComponent {
         if (this.state.dom !== prevState.dom) {
             this.parseDOM(this.state.dom, this.props);
         }
+        if (this.props.baseFontStyle !== prevProps.baseFontStyle) {
+            this.parseDOM(this.state.dom, this.props);
+        }
     }
 
     async registerDOM (props = this.props, cb) {
